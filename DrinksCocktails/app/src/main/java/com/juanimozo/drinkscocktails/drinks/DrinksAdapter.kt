@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +22,7 @@ class DrinksAdapter(
 
         val drinkNameText = view.findViewById<TextView>(R.id.drinkName)
         val drinkImageView = view.findViewById<ImageView>(R.id.drinkImage)
+        val card = view.findViewById<CardView>(R.id.cardView)
 
     }
 
@@ -41,7 +43,6 @@ class DrinksAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrinksListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_drink_recipe, parent, false)
-
         return DrinksListViewHolder(view)
     }
 
