@@ -20,27 +20,26 @@ class DrinksFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_drinks, container, false)
 
-        // ToDo: Si funciona va al ViewModel
         val drinkList = drinksRepository()
 
         // RecyclerView
         val recipeList: RecyclerView = view.findViewById(R.id.recipeListRecyclerView)
         recipeList.layoutManager = LinearLayoutManager(requireContext())
-        val recipeListAdapter = DrinksAdapter(drinkList)
+        val recipeListAdapter = DrinksAdapter(drinkList) { item ->
+            showRecipeDetails(item)
+        }
         recipeList.adapter = recipeListAdapter
-
-//        recipeListAdapter.submitList(drinkList)
 
         return view
     }
 
-    private fun showRecipeDetails(recipe: RecipeList) {
-        val name = recipe.recipe[0].name
-        val image = recipe.recipe[0].image
-        val description = recipe.recipe[0].description
-        val ingredient = recipe.recipe[0].ingredients
-        val recipe = recipe.recipe[0].recipeDetails
-        val action = DrinksFragmentDirections.actionDrinksFragmentToRecipeDetailsFragment(name, image, description, ingredient, recipe)
+    private fun showRecipeDetails(recipe: DrinkRecipeItem) {
+        val name = recipe.name
+        val image = recipe.image
+        val description = recipe.description
+        val ingredient = recipe.ingredients
+        val instruction = recipe.instruction
+        val action = DrinksFragmentDirections.actionDrinksFragmentToRecipeDetailsFragment(name, image, description, ingredient, instruction)
         findNavController().navigate(action)
     }
 }

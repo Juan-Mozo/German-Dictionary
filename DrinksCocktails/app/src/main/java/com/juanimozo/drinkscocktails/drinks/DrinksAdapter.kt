@@ -7,39 +7,42 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.juanimozo.drinkscocktails.R
 
 
 class DrinksAdapter(
-    private val recipeList: List<DrinkRecipe>
+    private val recipes: List<DrinkRecipeItem>,
+    private val listener: (DrinkRecipeItem) -> Unit
 ) : RecyclerView.Adapter<DrinksAdapter.DrinksListViewHolder>() {
 
     class DrinksListViewHolder(
         view: View
     ) : RecyclerView.ViewHolder(view) {
 
-        val drinkNameText = view.findViewById<TextView>(R.id.drinkName)
+        val drinkNameText = view.findViewById<TextView>(R.id.drinkNameText)
         val drinkImageView = view.findViewById<ImageView>(R.id.drinkImage)
-        val card = view.findViewById<CardView>(R.id.cardView)
 
-    }
-
-    companion object {
-        val DIFF_CONFIG = object : DiffUtil.ItemCallback<RecipeList>() {
-            //Devuelve solo si oldItem y newItem son lo mismo
-            override fun areItemsTheSame(oldItem: RecipeList, newItem: RecipeList): Boolean {
-                return oldItem === newItem
-            }
-
-            //Devuelve solo si el contenido entre oldItem y newItem son lo mismo
-            override fun areContentsTheSame(oldItem: RecipeList, newItem: RecipeList): Boolean {
-                return oldItem == newItem
-            }
-
+        fun bind(item: DrinkRecipeItem) {
+            drinkNameText.text = item.name
+            drinkImageView.setImageResource(item.image)
         }
     }
+
+//    companion object {
+//        val DIFF_CONFIG = object : DiffUtil.ItemCallback<RecipeList>() {
+//            //Devuelve solo si oldItem y newItem son lo mismo
+//            override fun areItemsTheSame(oldItem: RecipeList, newItem: RecipeList): Boolean {
+//                return oldItem === newItem
+//            }
+//
+//            //Devuelve solo si el contenido entre oldItem y newItem son lo mismo
+//            override fun areContentsTheSame(oldItem: RecipeList, newItem: RecipeList): Boolean {
+//                return oldItem == newItem
+//            }
+//
+//        }
+//    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrinksListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_drink_recipe, parent, false)
@@ -48,10 +51,10 @@ class DrinksAdapter(
 
     // Bind data with the ViewHolder
     override fun onBindViewHolder(holder: DrinksListViewHolder, position: Int) {
-        val currentItem = recipeList[position]
-        holder.drinkNameText.text = currentItem.name
-        holder.drinkImageView.setImageResource(currentItem.image)
+        val item = recipes[position]
+        holder.bind(item)
+        holder.itemView.setOnClickListener { listener(item) }
     }
 
-    override fun getItemCount() = recipeList.size
+    override fun getItemCount() = recipes.size
 }

@@ -1,0 +1,8 @@
+<resources>
+    <!-- bottom_navigation_menu.xml -->
+    <string name="page_one">Cócteles</string>
+    <string name="page_two">Categorias</string>
+    <string name="page_three">Mis Cócteles</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

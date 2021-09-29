@@ -1,4 +1,10 @@
 <resources>
+    <!-- Margins -->
     <dimen name="med_margin">16dp</dimen>
     <dimen name="min_margin">8dp</dimen>
+    <!-- Font Sizes -->
+    <dimen name="small_text">16sp</dimen>
+    <dimen name="title">18sp</dimen>
+    <dimen name="medium_text">20sp</dimen>
+    <dimen name="large_text">34sp</dimen>
 </resources>

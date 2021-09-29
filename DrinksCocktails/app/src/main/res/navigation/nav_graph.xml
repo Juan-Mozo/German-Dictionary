@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/drinksFragment"
         android:name="com.juanimozo.drinkscocktails.drinks.DrinksFragment"
-        android:label="Drinks"
         tools:layout="@layout/fragment_drinks" >
         <action
             android:id="@+id/action_drinksFragment_to_recipeDetailsFragment"
@@ -26,8 +25,7 @@
         tools:layout="@layout/fragment_my_drinks" />
     <fragment
         android:id="@+id/recipeDetailsFragment"
-        android:name="com.juanimozo.drinkscocktails.drinks.RecipeDetailsFragment"
-        android:label="fragment_recipe"
+        android:name="com.juanimozo.drinkscocktails.drinks.details.RecipeDetailsFragment"
         tools:layout="@layout/fragment_recipe" >
         <argument
             android:name="name"
@@ -42,7 +40,7 @@
             android:name="ingredient"
             app:argType="string" />
         <argument
-            android:name="recipe"
+            android:name="instruction"
             app:argType="string" />
     </fragment>
 </navigation>
