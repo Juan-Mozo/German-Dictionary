@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?backgroundColor"
+    tools:context=".settings.theme.ThemeSettingsFragment">
+
+
+    <TextView
+        android:id="@+id/themeQuestionText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/med_margin"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="@dimen/med_margin"
+        android:fontFamily="@font/montserrat_bold"
+        android:maxLines="2"
+        android:text="@string/theme_question"
+        android:textColor="?attr/titleTextColor"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/themeInfoText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/med_margin"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/theme_info"
+        android:textColor="?attr/subtitleTextColor"
+        app:layout_constraintEnd_toEndOf="@+id/themeQuestionText"
+        app:layout_constraintStart_toStartOf="@+id/themeQuestionText"
+        app:layout_constraintTop_toBottomOf="@+id/themeQuestionText" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/light_theme_card"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/card_height"
+        android:layout_marginStart="@dimen/card_horizontal_margin"
+        android:layout_marginTop="@dimen/xlar_margin"
+        android:layout_marginEnd="@dimen/card_horizontal_margin"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/cardBackgroundColor"
+        app:cardCornerRadius="@dimen/min_radius"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/themeInfoText">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/cardBackgroundColor">
+
+            <ImageView
+                android:id="@+id/light_theme_view"
+                android:layout_width="@dimen/list_icon_size"
+                android:layout_height="@dimen/list_icon_size"
+                android:layout_marginStart="@dimen/sma_margin"
+                android:paddingStart="@dimen/small_padding"
+                android:paddingEnd="@dimen/small_padding"
+                android:src="@drawable/ic_lightbulb"
+                app:tint="?iconTint"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/light_theme_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/light_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/light_theme_view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dark_theme_card"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/card_height"
+        android:layout_marginStart="@dimen/card_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/card_horizontal_margin"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/cardBackgroundColor"
+        app:cardCornerRadius="@dimen/min_radius"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/light_theme_card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/cardBackgroundColor">
+
+            <ImageView
+                android:id="@+id/dark_theme_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sma_margin"
+                android:paddingStart="@dimen/small_padding"
+                android:paddingEnd="@dimen/small_padding"
+                android:src="@drawable/ic_spain_flag"
+                app:tint="?iconTint"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dark_theme_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/dark_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/dark_theme_view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/neon_theme_card"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/card_height"
+        android:layout_marginStart="@dimen/card_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/card_horizontal_margin"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/cardBackgroundColor"
+        app:cardCornerRadius="@dimen/min_radius"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dark_theme_card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/cardBackgroundColor">
+
+            <ImageView
+                android:id="@+id/neon_theme_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sma_margin"
+                android:paddingStart="@dimen/small_padding"
+                android:paddingEnd="@dimen/small_padding"
+                android:src="@drawable/ic_spain_flag"
+                app:tint="?iconTint"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/neon_theme_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/neon_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/neon_theme_view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

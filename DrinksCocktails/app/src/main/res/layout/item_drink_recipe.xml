@@ -3,24 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="415dp"
+    android:layout_height="@dimen/item_drink_height"
+    android:background="?backgroundColor"
     android:textAlignment="center">
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/drinkImage"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginTop="@dimen/med_margin"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/lar_margin"
+        android:layout_marginEnd="16dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,16 +24,41 @@
         android:id="@+id/drinkNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/montserrat_bold"
         android:maxLines="3"
-        android:textColor="@color/grey"
+        android:paddingStart="6dp"
+        android:paddingTop="1dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="1dp"
+        android:textColor="?titleTextColor"
         android:textSize="@dimen/title"
-        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/drinkImage"
         tools:text="Porn Star Martini" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="?attr/dividerHorizontal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/arrowIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/lar_margin"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drinkImage"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        app:tint="?iconTint" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

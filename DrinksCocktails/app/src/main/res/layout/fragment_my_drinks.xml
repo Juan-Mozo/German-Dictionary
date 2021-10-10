@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?backgroundColor"
     tools:context=".profile.MyDrinksFragment">
 
 
@@ -12,7 +13,8 @@
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_marginEnd="@dimen/med_margin"
-        android:layout_marginBottom="@dimen/med_margin"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/japonica"
         android:clickable="true"
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"

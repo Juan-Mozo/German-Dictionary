@@ -5,27 +5,36 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/drinksFragment">
 
+    <!-- drinksFragment -->
     <fragment
         android:id="@+id/drinksFragment"
-        android:name="com.juanimozo.drinkscocktails.drinks.DrinksFragment"
-        tools:layout="@layout/fragment_drinks" >
+        android:name="com.juanimozo.drinkscocktails.drinks.ExploreFragment"
+        android:label=""
+        tools:layout="@layout/fragment_explore" >
         <action
             android:id="@+id/action_drinksFragment_to_recipeDetailsFragment"
             app:destination="@id/recipeDetailsFragment" />
     </fragment>
+
+    <!-- categoriesFragment -->
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.juanimozo.drinkscocktails.categories.CategoriesFragment"
-        android:label="Categories"
+        android:label=""
         tools:layout="@layout/fragment_categories" />
+
+    <!-- myDrinksFragment -->
     <fragment
         android:id="@+id/myDrinksFragment"
         android:name="com.juanimozo.drinkscocktails.profile.MyDrinksFragment"
-        android:label="Profile"
+        android:label=""
         tools:layout="@layout/fragment_my_drinks" />
+
+    <!-- recipeDetailsFragment -->
     <fragment
         android:id="@+id/recipeDetailsFragment"
         android:name="com.juanimozo.drinkscocktails.drinks.details.RecipeDetailsFragment"
+        android:label=""
         tools:layout="@layout/fragment_recipe" >
         <argument
             android:name="name"
@@ -43,4 +52,43 @@
             android:name="instruction"
             app:argType="string" />
     </fragment>
+
+    <!-- settingsFragment -->
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.juanimozo.drinkscocktails.settings.SettingsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_unitsSettingsFragment"
+            app:destination="@id/unitsSettingsFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_languageSettingsFragment"
+            app:destination="@id/languageSettingsFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_themeSettingsFragment"
+            app:destination="@id/themeSettingsFragment" />
+    </fragment>
+
+    <!-- languageSettingsFragment -->
+    <fragment
+        android:id="@+id/languageSettingsFragment"
+        android:name="com.juanimozo.drinkscocktails.settings.language.LanguageSettingsFragment"
+        android:label="@string/language_settings_title"
+        tools:layout="@layout/fragment_language_settings" />
+
+    <!-- themeSettingsFragment -->
+    <fragment
+        android:id="@+id/themeSettingsFragment"
+        android:name="com.juanimozo.drinkscocktails.settings.theme.ThemeSettingsFragment"
+        android:label="@string/darkTheme_settings_title"
+        tools:layout="@layout/fragment_theme_settings" />
+
+    <!-- unitsSettingsFragment -->
+    <fragment
+        android:id="@+id/unitsSettingsFragment"
+        android:name="com.juanimozo.drinkscocktails.settings.units.UnitsSettingsFragment"
+        android:label="@string/units_settings_title"
+        tools:layout="@layout/fragment_units_settings" />
+
 </navigation>

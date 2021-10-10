@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?backgroundColor"
     tools:context=".drinks.details.RecipeDetailsFragment">
 
     <ScrollView
@@ -14,7 +15,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ImageView
@@ -22,7 +23,7 @@
                 android:layout_width="0dp"
                 android:layout_height="400dp"
                 android:layout_marginStart="@dimen/med_margin"
-                android:layout_marginTop="55dp"
+                android:layout_marginTop="@dimen/toolbar_height"
                 android:layout_marginEnd="@dimen/med_margin"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +40,7 @@
                 android:gravity="center"
                 android:letterSpacing="0.03"
                 android:maxLines="1"
-                android:textColor="@color/summer_orange"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="@dimen/large_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,68 +51,99 @@
                 android:id="@+id/descriptionText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/min_margin"
-                android:layout_marginTop="@dimen/min_margin"
-                android:layout_marginEnd="@dimen/min_margin"
+                android:layout_marginStart="@dimen/sma_margin"
+                android:layout_marginTop="@dimen/sma_margin"
+                android:layout_marginEnd="@dimen/sma_margin"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
+                android:textColor="?attr/subtitleTextColor"
                 android:textSize="@dimen/small_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/drinkName"
                 tools:text="Descripcion" />
 
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="@dimen/divider_med_width"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:backgroundTint="?attr/dividerHorizontal"
+                app:layout_constraintBottom_toTopOf="@+id/ingredientTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionText" />
+
             <TextView
-                android:id="@+id/ingredient"
+                android:id="@+id/ingredientTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/med_margin"
                 android:layout_marginTop="@dimen/med_margin"
                 android:fontFamily="@font/montserrat"
-                android:text="Ingredients"
-                android:textColor="@color/summer_orange"
+                android:text="@string/recipe_ingredients_title"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="@dimen/title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descriptionText" />
 
             <TextView
                 android:id="@+id/ingredientsText"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/min_margin"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="@dimen/sma_margin"
+                android:layout_marginEnd="8dp"
                 android:fontFamily="@font/work_sans"
-                android:gravity="left"
+                android:gravity="start"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="?attr/subtitleTextColor"
                 android:textSize="@dimen/small_text"
-                app:layout_constraintStart_toStartOf="@+id/ingredient"
-                app:layout_constraintTop_toBottomOf="@+id/ingredient"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ingredientTitle"
                 tools:text="Lemon Juice. \n Salt. \n Rum." />
 
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="@dimen/divider_med_width"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:backgroundTint="?attr/dividerHorizontal"
+                app:layout_constraintBottom_toTopOf="@+id/recipeTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ingredientsText" />
+
             <TextView
-                android:id="@+id/recipe"
+                android:id="@+id/recipeTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/med_margin"
                 android:layout_marginTop="@dimen/med_margin"
                 android:fontFamily="@font/montserrat"
-                android:text="Recipe"
-                android:textColor="@color/summer_orange"
+                android:text="@string/recipe_title"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="@dimen/title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ingredientsText" />
 
             <TextView
                 android:id="@+id/recipeText"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/min_margin"
-                android:layout_marginBottom="@dimen/med_margin"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="@dimen/sma_margin"
+                android:layout_marginEnd="@dimen/sma_margin"
+                android:layout_marginBottom="@dimen/bottom_nav_height"
                 android:fontFamily="@font/work_sans"
-                android:gravity="left"
+                android:gravity="start"
+                android:textColor="?attr/subtitleTextColor"
                 android:textSize="@dimen/small_text"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/recipe"
-                app:layout_constraintTop_toBottomOf="@+id/recipe"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recipeTitle"
                 tools:text="Recipe" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

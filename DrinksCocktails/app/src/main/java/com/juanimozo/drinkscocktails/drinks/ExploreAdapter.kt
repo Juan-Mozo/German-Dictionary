@@ -5,16 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.juanimozo.drinkscocktails.DrinkRecipeItemModel
 import com.juanimozo.drinkscocktails.R
 
-
-class DrinksAdapter(
-    private val recipes: List<DrinkRecipeItem>,
-    private val listener: (DrinkRecipeItem) -> Unit
-) : RecyclerView.Adapter<DrinksAdapter.DrinksListViewHolder>() {
+class ExploreRecyclerViewAdapter(
+    private val recipeModels: List<DrinkRecipeItemModel>,
+    private val listener: (DrinkRecipeItemModel) -> Unit
+) : RecyclerView.Adapter<ExploreRecyclerViewAdapter.DrinksListViewHolder>() {
 
     class DrinksListViewHolder(
         view: View
@@ -23,9 +21,9 @@ class DrinksAdapter(
         val drinkNameText = view.findViewById<TextView>(R.id.drinkNameText)
         val drinkImageView = view.findViewById<ImageView>(R.id.drinkImage)
 
-        fun bind(item: DrinkRecipeItem) {
-            drinkNameText.text = item.name
-            drinkImageView.setImageResource(item.image)
+        fun bind(itemModel: DrinkRecipeItemModel) {
+            drinkNameText.text = itemModel.name
+            drinkImageView.setImageResource(itemModel.image)
         }
     }
 
@@ -51,10 +49,10 @@ class DrinksAdapter(
 
     // Bind data with the ViewHolder
     override fun onBindViewHolder(holder: DrinksListViewHolder, position: Int) {
-        val item = recipes[position]
+        val item = recipeModels[position]
         holder.bind(item)
         holder.itemView.setOnClickListener { listener(item) }
     }
 
-    override fun getItemCount() = recipes.size
+    override fun getItemCount() = recipeModels.size
 }
