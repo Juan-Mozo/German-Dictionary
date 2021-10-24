@@ -72,7 +72,6 @@
                 app:srcCompat="@drawable/ic_balance" />
 
             <TextView
-                android:id="@+id/ounces_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
@@ -88,16 +87,16 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/ml_card"
+        android:id="@+id/mlCard"
         android:layout_width="0dp"
         android:layout_height="@dimen/card_height"
         android:layout_marginStart="@dimen/card_horizontal_margin"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="@dimen/card_horizontal_margin"
+        android:background="?attr/cardBackgroundColor"
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
-        android:background="?attr/cardBackgroundColor"
         app:cardCornerRadius="@dimen/min_radius"
         app:cardElevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,14 +116,13 @@
                 android:paddingStart="@dimen/small_padding"
                 android:paddingEnd="@dimen/small_padding"
                 android:src="@drawable/ic_ml"
-                app:tint="?iconTint"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_ml" />
+                app:srcCompat="@drawable/ic_ml"
+                app:tint="?iconTint" />
 
             <TextView
-                android:id="@+id/ml_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"

@@ -5,12 +5,10 @@
     <dimen name="med_margin">16dp</dimen>
     <dimen name="sma_margin">8dp</dimen>
     <!-- Fonts Size -->
-    <dimen name="extra_small_text"></dimen>
     <dimen name="small_text">16sp</dimen>
     <dimen name="title">18sp</dimen>
     <dimen name="medium_text">20sp</dimen>
     <dimen name="large_text">27sp</dimen>
-    <dimen name="extra_large_text">34sp</dimen>
     <!-- Icons Size -->
     <dimen name="list_icon_size">40dp</dimen>
     <!-- Toolbar -->
@@ -18,7 +16,6 @@
     <!-- Bottom Nav -->
     <dimen name="bottom_nav_height">80dp</dimen>
     <!-- Padding -->
-    <dimen name="bg_padding">1dp</dimen>
     <dimen name="small_padding">5dp</dimen>
     <!-- Radius -->
     <dimen name="min_radius">5dp</dimen>
@@ -26,9 +23,6 @@
     <!-- Horizontal Divider -->
     <dimen name="divider_med_width">200dp</dimen>
     <!-- Navigation Drawer -->
-    <dimen name="navigation_drawer_width">260dp</dimen>
-    <dimen name="navigation_header_height">100dp</dimen>
-    <dimen name="nav_header_margin">3dp</dimen>
 
     <!-- item_drink_recipe.xml -->
     <dimen name="item_drink_height">400dp</dimen>

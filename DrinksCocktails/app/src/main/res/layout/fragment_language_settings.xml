@@ -72,7 +72,6 @@
                 app:srcCompat="@drawable/ic_uk_flag" />
 
             <TextView
-                android:id="@+id/english_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
@@ -88,7 +87,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/spanish_card"
+        android:id="@+id/spanishCard"
         android:layout_width="0dp"
         android:layout_height="@dimen/card_height"
         android:layout_marginStart="@dimen/card_horizontal_margin"
@@ -122,7 +121,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/spanish_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"

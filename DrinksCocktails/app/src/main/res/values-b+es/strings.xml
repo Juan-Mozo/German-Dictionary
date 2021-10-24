@@ -29,13 +29,16 @@
     <string name="light_title">Tema Claro</string>
     <string name="dark_title">Tema Oscuro</string>
     <string name="neon_title">Tema Neón</string>
+    <!-- fragment_explore.xml -->
+    <string name="order">Orden</string>
+    <string name="by_name">Nombre</string>
+    <string name="by_category">Categoria</string>
+    <string name="by_popularity">Popularidad</string>
+    <string name="order_type">Order Type</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">descending</string>
     <!-- ExploreFragment.kt -->
     <string name="recipe_count">Recetas</string>
-    <string-array name="order_by_array">
-        <item>Nombre</item>
-        <item>Más Popular</item>
-        <item>Categoría</item>
-    </string-array>
     <!-- UnitsSettingsFragment.kt -->
     <string name="units_changed_oz">Unidades cambiadas a Onzas</string>
     <string name="units_changed_ml">Unidades cambiadas a mililitros</string>
@@ -47,4 +50,5 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="init_activity">Bienvenido</string>
 </resources>

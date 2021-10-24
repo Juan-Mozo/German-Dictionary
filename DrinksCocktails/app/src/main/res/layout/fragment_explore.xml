@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?backgroundColor"
-    tools:context=".drinks.ExploreFragment">
+    tools:context=".drinks.presentation.explore.ExploreFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -19,7 +19,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/exploreTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/med_margin"
@@ -33,38 +32,26 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="8dp">
+                android:layout_marginBottom="@dimen/sma_margin">
 
                 <TextView
-                    android:id="@+id/recipeCountText"
+                    android:id="@+id/listCountText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/med_margin"
-                    android:text="16 recipes"
                     android:textColor="?subtitleTextColor"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroupOrderType"
                     tools:text="16 recipes" />
 
-                <Spinner
-                    android:id="@+id/orderBySpinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/med_margin"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayoutIcon"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <ImageView
-                    android:id="@+id/linearLayoutIcon"
                     android:layout_width="@dimen/layout_type_icon"
                     android:layout_height="@dimen/layout_type_icon"
                     android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_units"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/gridLayoutIcon"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_dots_menu"
                     app:tint="?iconTint" />
 
                 <ImageView
@@ -72,16 +59,81 @@
                     android:layout_width="@dimen/layout_type_icon"
                     android:layout_height="@dimen/layout_type_icon"
                     android:layout_marginEnd="@dimen/lar_margin"
-                    android:src="@drawable/ic_dots_menu"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_cocktail"
                     app:tint="?iconTint" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/order" />
+
+                    <RadioButton
+                        android:id="@+id/radio_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/by_name"
+                        android:onClick="onRadioButtonClicked"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="@string/by_category" />
+
+                    <RadioButton
+                        android:id="@+id/radio_popularity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="@string/by_popularity" />
+
+
+                </RadioGroup>
+
+                <RadioGroup
+                    android:id="@+id/radioGroupOrderType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroupOrder">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/order_type" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/descending"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ascending" />
+
+                </RadioGroup>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recipeListRecyclerView"
+                android:id="@+id/drinkListRV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/item_drink_recipe" />

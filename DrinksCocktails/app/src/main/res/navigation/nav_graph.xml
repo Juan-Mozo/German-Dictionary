@@ -2,13 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
     app:startDestination="@id/drinksFragment">
 
     <!-- drinksFragment -->
     <fragment
         android:id="@+id/drinksFragment"
-        android:name="com.juanimozo.drinkscocktails.drinks.ExploreFragment"
+        android:name="com.juanimozo.drinkscocktails.drinks.presentation.explore.ExploreFragment"
         android:label=""
         tools:layout="@layout/fragment_explore" >
         <action
@@ -19,21 +18,16 @@
     <!-- categoriesFragment -->
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="com.juanimozo.drinkscocktails.categories.CategoriesFragment"
+        android:name="com.juanimozo.drinkscocktails.drinks.presentation.categories.CategoriesFragment"
         android:label=""
         tools:layout="@layout/fragment_categories" />
 
     <!-- myDrinksFragment -->
-    <fragment
-        android:id="@+id/myDrinksFragment"
-        android:name="com.juanimozo.drinkscocktails.profile.MyDrinksFragment"
-        android:label=""
-        tools:layout="@layout/fragment_my_drinks" />
 
     <!-- recipeDetailsFragment -->
     <fragment
         android:id="@+id/recipeDetailsFragment"
-        android:name="com.juanimozo.drinkscocktails.drinks.details.RecipeDetailsFragment"
+        android:name="com.juanimozo.drinkscocktails.drinks.presentation.details.RecipeDetailsFragment"
         android:label=""
         tools:layout="@layout/fragment_recipe" >
         <argument
@@ -90,5 +84,14 @@
         android:name="com.juanimozo.drinkscocktails.settings.units.UnitsSettingsFragment"
         android:label="@string/units_settings_title"
         tools:layout="@layout/fragment_units_settings" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.juanimozo.drinkscocktails.MainActivity"
+        android:label="MainActivity" />
+    <activity
+        android:id="@+id/initialSettingsActivity"
+        android:name="com.juanimozo.drinkscocktails.InitialSettingsActivity"
+        android:label="activity_initial_settings"
+        tools:layout="@layout/activity_initial_settings" />
 
 </navigation>

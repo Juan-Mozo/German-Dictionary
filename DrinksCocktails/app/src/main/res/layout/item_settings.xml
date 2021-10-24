@@ -52,7 +52,6 @@
         app:layout_constraintTop_toBottomOf="@+id/settingsListTitle" />
 
     <View
-        android:id="@+id/divider2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"

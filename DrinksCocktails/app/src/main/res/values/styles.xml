@@ -18,17 +18,4 @@
         <item name="iconTint">@color/dark_cream</item>
     </style>
 
-    <!-- NeonTheme -->
-    <style name="OverlayThemeNeon" parent="Theme.DrinksCocktails">
-        <item name="colorPrimary">@color/neon_purple</item>
-        <item name="colorPrimaryVariant">@color/neon_pink</item>
-        <item name="colorSecondary">@color/neon_red</item>
-        <item name="colorSecondaryVariant">@color/neon_yellow</item>
-        <item name="dividerHorizontal">@color/neon_red</item>
-        <item name="cardBackgroundColor">@color/white</item>
-        <item name="titleTextColor">@color/neon_purple</item>
-        <item name="android:statusBarColor">@color/neon_teal</item>
-        <item name="colorSurface">@color/neon_teal_transparent</item>
-        <item name="iconTint">@color/neon_pink</item>
-    </style>
 </resources>

@@ -13,7 +13,6 @@
         android:title="@string/page_two" />
 
     <item
-        android:id="@+id/myDrinksFragment"
         android:enabled="true"
         android:icon="@drawable/ic_user"
         android:title="@string/page_three" />
